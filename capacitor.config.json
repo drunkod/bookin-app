@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "bookin-app",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

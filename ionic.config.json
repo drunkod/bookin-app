@@ -1,0 +1,7 @@
+{
+  "name": "bookin-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
