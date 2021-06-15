@@ -1,11 +1,26 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
 import Tabs from '../views/Tabs.vue'
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '/',
     redirect: '/tabs/tab1'
+  },
+  {
+    path: '/first',
+    component: () => import('@/views/First.vue')
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/Login.vue')
+  },
+  {
+    path: '/register',
+    component: () => import('@/views/Register.vue')
+  },
+  {
+    path: '/subscription',
+    component: () => import('@/views/Subscription.vue')
   },
   {
     path: '/tabs/',
@@ -26,6 +41,14 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab3',
         component: () => import('@/views/Tab3.vue')
+      },
+      {
+        path: 'tab4',
+        component: () => import('@/views/Tab4.vue')
+      },
+      {
+        path: 'tab5',
+        component: () => import('@/views/Tab5.vue')
       }
     ]
   }
