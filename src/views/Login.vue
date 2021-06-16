@@ -18,7 +18,7 @@
               <span class="small">Garder ma session</span>
             </label>
           </div>
-          <a href="/login"><button class="btn btn-block btn-primary-light text-primary rounded-pill mb-4 w-100" type="submit">Se connecter</button></a>
+          <a class="btn btn-block btn-primary text-white rounded-pill mb-4 w-100" href="/subscription" type="submit">Se connecter</a>
         </form>
         <div>
           <div class="col text-center pb-3">

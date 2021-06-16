@@ -22,7 +22,7 @@
                 <span class="small">Je souhaite m’inscrire à la Newsletter</span>
               </label>
             </div>
-            <button class="btn btn-primary-light text-primary rounded-pill mb-4 w-100" type="submit">Créer un compte</button>
+            <a class="btn btn-primary text-white rounded-pill mb-4 w-100" href="/subscription" type="submit">Créer un compte</a>
           </form>
           <div>
             <div class="col text-center pb-3">
