@@ -19,7 +19,7 @@
 
         <ion-tab-button tab="tab4" href="/tabs/tab4">
           <ion-icon :icon="book" />
-          <ion-label>Bibliotèque</ion-label>
+          <ion-label>Contact</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="tab5" href="/tabs/tab5">
