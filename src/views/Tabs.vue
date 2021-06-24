@@ -18,7 +18,7 @@
         </ion-tab-button>
 
         <ion-tab-button tab="tab4" href="/tabs/tab4">
-          <ion-icon :icon="book" />
+          <ion-icon :icon="call" />
           <ion-label>Contact</ion-label>
         </ion-tab-button>
 
@@ -33,7 +33,7 @@
 
 <script>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage } from '@ionic/vue';
-import { home, menu, search, book, person, } from 'ionicons/icons';
+import { home, menu, search, call, person, } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
@@ -43,7 +43,7 @@ export default {
       home,
       menu,
       search,
-      book,
+      call,
       person,
     }
   }

@@ -5,6 +5,12 @@
         <div class="mb-4">
           <h1 class="display-2">Abonnement</h1>
         </div>
+        <div class="alert alert-success" role="alert" v-if="msg.success">
+          {{msg.success}}
+        </div>
+        <div class="alert alert-danger" role="alert" v-if="msg.error">
+          {{msg.error}}
+        </div>
         <ion-slides pager="true">
           <ion-slide>
             <div class="card bg-gray-light border-radius-10 mx-2">

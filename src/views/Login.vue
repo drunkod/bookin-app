@@ -5,12 +5,18 @@
         <div class="mb-4">
           <h2>Connexion</h2>
         </div>
-        <form>
+        <div class="alert alert-success" role="alert" v-if="msg.success">
+          {{msg.success}}
+        </div>
+        <div class="alert alert-danger" role="alert" v-if="msg.error">
+          {{msg.error}}
+        </div>
+        <form @submit.prevent="loginUser(form)">
           <div class="form-group mb-2">
-            <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="email" placeholder="E-mail">
+            <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="email" placeholder="E-mail" v-model="form.email">
           </div>
           <div class="form-group mb-3">
-            <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="password" placeholder="Mot de passe">
+            <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="password" placeholder="Mot de passe" v-model="form.password">
           </div>
           <div class="form-check mb-4">
             <label class="form-check-label text-muted">
@@ -18,7 +24,7 @@
               <span class="small">Garder ma session</span>
             </label>
           </div>
-          <a class="btn btn-block btn-primary text-white rounded-pill mb-4 w-100" href="/subscription" type="submit">Se connecter</a>
+          <ion-button class="btn btn-block btn-primary text-white rounded-pill mb-4 w-100" type="submit">Se connecter</ion-button>
         </form>
         <div>
           <div class="col text-center pb-3">
@@ -39,10 +45,29 @@
 </template>
 
 <script>
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonButton } from '@ionic/vue';
+import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Login',
-  components: { IonContent, IonPage }
+  components: { IonContent, IonPage, IonButton },
+  data() {
+    return {
+      form: {}
+    };
+  },
+  computed: {
+    ...mapGetters(['msg'])
+  },
+  methods: {
+    ...mapActions(['login']),
+    loginUser(form){
+      this.login(form)
+    }
+  },
+  mounted(){
+    this.msg.success = ''
+    this.msg.error = ''
+  }
 }
 </script>
