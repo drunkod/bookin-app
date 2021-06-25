@@ -1,15 +1,15 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <div class="container">
+      <div class="container mt-6">
         <div>
-          <div class="mt-6 pb-3">
-            <h3>Contact</h3>
-          </div>
+          <ion-toolbar>
+            <ion-title size="large">Contact</ion-title>
+          </ion-toolbar>
         </div>
 
-        <div class="row">
-          <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+        <div class="mt-3">
+          <div class="container col-lg-8 col-md-10 col-sm-12 mx-auto">
             <form method="post" action="/sendMessage">
               <div class="form-row">
                 <div class="form-group col-lg-4 col-md-12 col-sm-12 pr-2">
@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonTitle } from '@ionic/vue';
 
 export default  {
-  name: 'Tab4',
-  components: { IonContent, IonPage }
+  name: 'Contact',
+  components: { IonContent, IonPage, IonTitle }
 }
 </script>

@@ -2,15 +2,20 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <div class="px-lg-7 px-4 pt-10 pb-5">
+        <a href="/first">
+          <i class="fas fa-arrow-left"></i>
+        </a>
         <div class="mb-4">
           <h2>Connexion</h2>
         </div>
+
         <div class="alert alert-success" role="alert" v-if="msg.success">
           {{msg.success}}
         </div>
         <div class="alert alert-danger" role="alert" v-if="msg.error">
           {{msg.error}}
         </div>
+
         <form @submit.prevent="loginUser(form)">
           <div class="form-group mb-2">
             <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="email" placeholder="E-mail" v-model="form.email">

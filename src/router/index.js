@@ -23,32 +23,36 @@ const routes = [
     component: () => import('@/views/Subscription.vue')
   },
   {
+    path: '/article/:id',
+    component: () => import('@/views/Article.vue')
+  },
+  {
     path: '/tabs/',
     component: Tabs,
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/home'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        path: 'home',
+        component: () => import('@/views/Home.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        path: 'news',
+        component: () => import('@/views/News.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
+        path: 'search',
+        component: () => import('@/views/Search.vue')
       },
       {
-        path: 'tab4',
-        component: () => import('@/views/Tab4.vue')
+        path: 'contact',
+        component: () => import('@/views/Contact.vue')
       },
       {
-        path: 'tab5',
-        component: () => import('@/views/Tab5.vue')
+        path: 'profile',
+        component: () => import('@/views/Profile.vue')
       }
     ]
   }

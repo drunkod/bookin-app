@@ -10,6 +10,6 @@ export const news = (state, news) => {
     state.news = news
 }
 
-export const article = (state, article => {
+export const article = (state, article) => {
     state.article = article
 }

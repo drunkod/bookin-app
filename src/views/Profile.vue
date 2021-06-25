@@ -20,7 +20,7 @@
         <div class="ml-3 mt-3">
           <h6>Gérer mon abonnement</h6>
           <h6>Modifier mes informations</h6>
-          <h6 class="text-danger">Déconnexion</h6>
+          <a class="text-danger" href="/login" @click.prevent="logout">Déconnexion</a>
         </div>
       </div>
     </ion-content>
@@ -28,10 +28,24 @@
 </template>
 
 <script>
-import { IonPage, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle } from '@ionic/vue';
+import { mapActions, mapGetters } from "vuex";
 
 export default  {
-  name: 'Tab5',
-  components: { IonToolbar, IonTitle, IonContent, IonPage }
+  name: 'Profile',
+  components: { IonToolbar, IonTitle, IonContent, IonPage, IonCard, IonCardHeader, IonCardTitle },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters([
+      'user'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'logout'
+    ])
+  }
 }
 </script>

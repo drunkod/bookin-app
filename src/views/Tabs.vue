@@ -2,27 +2,27 @@
   <ion-page>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
+        <ion-tab-button tab="home" href="/tabs/home">
           <ion-icon :icon="home" />
           <ion-label>Accueil</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-tab-button tab="news" href="/tabs/news">
           <ion-icon :icon="menu" />
           <ion-label>Actualité</ion-label>
         </ion-tab-button>
         
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
+        <ion-tab-button tab="search" href="/tabs/search">
           <ion-icon :icon="search" />
           <ion-label>Recherche</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab4" href="/tabs/tab4">
+        <ion-tab-button tab="contact" href="/tabs/contact">
           <ion-icon :icon="call" />
           <ion-label>Contact</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab5" href="/tabs/tab5">
+        <ion-tab-button tab="profile" href="/tabs/profile">
           <ion-icon :icon="person" />
           <ion-label>Profil</ion-label>
         </ion-tab-button>
