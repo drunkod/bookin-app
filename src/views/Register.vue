@@ -3,18 +3,29 @@
     <ion-content :fullscreen="true">
       <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
         <div class="card-block px-lg-7 px-4 pt-10 pb-5">
+          <a href="/first">
+            <i class="fas fa-arrow-left"></i>
+          </a>
           <div class="mb-4">
             <h2>Inscription</h2>
           </div>
-          <form>
+
+          <div class="alert alert-success" role="alert" v-if="msg.success">
+            {{msg.success}}
+          </div>
+          <div class="alert alert-danger" role="alert" v-if="msg.error">
+            {{msg.error}}
+          </div>
+
+          <form @submit.prevent="registerUser(form)">
             <div class="form-group mb-2">
-              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="name" placeholder="Nom">
+              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="email" placeholder="Email" v-model="form.email">
             </div>
             <div class="form-group mb-2">
-              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="email" placeholder="E-mail">
+              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="password" placeholder="Mot de passe" v-model="form.password">
             </div>
             <div class="form-group mb-3">
-              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="password" placeholder="Mot de passe">
+              <input class="form-control rounded-pill" style="background: #F6F7F9; border-color:#F6F7F9;" type="password" placeholder="Confirmer le mot de passe" v-model="form.password_confirmation">
             </div>
             <div class="form-check mb-4">
               <label class="form-check-label text-muted">
@@ -22,7 +33,7 @@
                 <span class="small">Je souhaite m’inscrire à la Newsletter</span>
               </label>
             </div>
-            <a class="btn btn-primary text-white rounded-pill mb-4 w-100" href="/subscription" type="submit">Créer un compte</a>
+            <ion-button class="btn btn-primary text-white rounded-pill mb-4 w-100" type="submit">Créer un compte</ion-button>
           </form>
           <div>
             <div class="col text-center pb-3">
@@ -47,10 +58,29 @@
 </template>
 
 <script>
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonButton } from '@ionic/vue';
+import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Register',
-  components: { IonContent, IonPage }
+  components: { IonContent, IonPage, IonButton },
+  data() {
+    return {
+      form: {}
+    };
+  },
+  computed: {
+    ...mapGetters(['msg'])
+  },
+  methods: {
+    ...mapActions(['register']),
+    registerUser(form){
+      this.register(form)
+    }
+  },
+  mounted(){
+    this.msg.success = ''
+    this.msg.error = ''
+  }
 }
 </script>
