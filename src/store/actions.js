@@ -79,10 +79,11 @@ export const showNews = ({ commit, state }) => {
     });
 }
 
-export const showOneNews = ({ commit, state }, id) => {
+export const showOneNews = ({ commit, state }, newsId) => {
+    console.log(newsId);
     axios.get(
-        `http://127.0.0.1:8000/api/article/${id}`).then((response) => {
-        const article = response.data.news
+        `http://bookin-web.herokuapp.com/api/article/${newsId}`).then((response) => {
+        const article = response
         console.log(article)
         commit('article', article)
     }).catch((error) => {

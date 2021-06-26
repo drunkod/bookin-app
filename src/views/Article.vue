@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonTitle } from '@ionic/vue';
+import { IonPage, IonContent, IonTitle, IonToolbar } from '@ionic/vue';
 import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Article',
-  components: { IonContent, IonPage, IonTitle },
+  components: { IonContent, IonPage, IonTitle, IonToolbar  },
   data() {
     return {};
   },
@@ -42,7 +42,8 @@ export default  {
     ...mapActions(['showOneNews'])
   },
   mounted(){
-    this.showOneNews()
+    console.log(this.$route.params.id)
+    this.showOneNews(this.$route.params.id)
   }
 }
 </script>

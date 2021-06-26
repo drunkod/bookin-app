@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonTitle } from '@ionic/vue';
+import { IonPage, IonContent, IonTitle, IonToolbar } from '@ionic/vue';
 import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'News',
-  components: { IonContent, IonPage, IonTitle },
+  components: { IonContent, IonPage, IonTitle, IonToolbar },
   data() {
     return {};
   },
