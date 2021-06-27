@@ -28,7 +28,7 @@
                   <input class="form-control rounded" type="text" placeholder="Prénom" v-model="form.firstname">
                 </div>
                 <div class="form-group col-lg-4 col-md-12 col-sm-12 pl-2">
-                  <input class="form-control rounded" type="text" placeholder="Email" v-model="form.email">
+                  <input class="form-control rounded" type="email" placeholder="Email" v-model="form.email">
                 </div>
               </div>
               <div class="form-group mb-5">
@@ -49,7 +49,7 @@
 
 <script>
 import { IonPage, IonContent, IonTitle, IonToolbar } from '@ionic/vue';
-import {mapActions, mapGetters} from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Contact',
@@ -66,7 +66,8 @@ export default  {
     ...mapActions(['sendMessage']),
     sendForm(form) {
       this.sendMessage(form)
-    }
+      this.form = {}
+    },
   },
   mounted(){
     this.msg.success = ''

@@ -29,7 +29,7 @@
               <span class="small">Garder ma session</span>
             </label>
           </div>
-          <ion-button class="btn btn-block btn-primary text-white rounded-pill mb-4 w-100" type="submit">Se connecter</ion-button>
+          <button class="btn btn-block btn-primary text-white rounded-pill mb-4 w-100" type="submit">Se connecter</button>
         </form>
         <div>
           <div class="col text-center pb-3">
@@ -50,12 +50,12 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonButton } from '@ionic/vue';
+import { IonPage, IonContent } from '@ionic/vue';
 import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Login',
-  components: { IonContent, IonPage, IonButton },
+  components: { IonContent, IonPage },
   data() {
     return {
       form: {}

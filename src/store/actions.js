@@ -16,10 +16,10 @@ export const login = ({ commit, state }, form) => {
         }
         commit('data', user)
         state.msg.success = 'Connexion réussie'
-        router.push('/subscription');
+        router.push('/tabs/profile');
     }).catch((error) => {
         console.log(error);
-        state.msg.error = error
+        state.msg.error = "Echec de connexion !"
     });
 }
 
@@ -42,7 +42,7 @@ export const register = ({ commit, state }, form) => {
         window.location.href="/login"
     }).catch((error) => {
         state.msg.error = error
-        console.log(error);
+        state.msg.error = "Echec d'inscription !"
     });
 }
 
@@ -52,7 +52,7 @@ export const logout = ({ commit, state }) => {
         return;
     }
     axios.post(
-        'http://127.0.0.1:8000/api/logout', {}, {
+        'http://bookin-web.herokuapp.com/api/logout', {}, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -69,7 +69,8 @@ export const logout = ({ commit, state }) => {
 
 export const showNews = ({ commit, state }) => {
     axios.get(
-        'http://bookin-web.herokuapp.com/api/news').then((response) => {
+        'http://bookin-web.herokuapp.com/api/news')
+        .then((response) => {
         const news = response.data.allNews
         console.log(news)
         commit('news', news)
@@ -79,11 +80,12 @@ export const showNews = ({ commit, state }) => {
     });
 }
 
-export const showOneNews = ({ commit, state }, newsId) => {
-    console.log(newsId);
+export const showOneNews = ({ commit, state }, newId) => {
+    console.log(newId);
     axios.get(
-        `http://bookin-web.herokuapp.com/api/article/1`).then((response) => {
-        const article = response
+        `http://bookin-web.herokuapp.com/api/article/${newId}`
+    ).then((response) => {
+        const article = response.data.news
         console.log(article)
         commit('article', article)
     }).catch((error) => {
@@ -99,7 +101,7 @@ export const sendMessage = ({ state }, form) => {
             firstname: form.firstname,
             lastname: form.lastname,
             email: form.email,
-            message: form.message,
+            body: form.body,
         }
         ).then((response) => {
         console.log(response);

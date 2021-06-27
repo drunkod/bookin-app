@@ -33,7 +33,7 @@
                 <span class="small">Je souhaite m’inscrire à la Newsletter</span>
               </label>
             </div>
-            <ion-button class="btn btn-primary text-white rounded-pill mb-4 w-100" type="submit">Créer un compte</ion-button>
+            <button class="btn btn-primary text-white rounded-pill mb-4 w-100" type="submit">Créer un compte</button>
           </form>
           <div>
             <div class="col text-center pb-3">
@@ -58,12 +58,12 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonButton } from '@ionic/vue';
+import { IonPage, IonContent } from '@ionic/vue';
 import { mapActions, mapGetters } from "vuex";
 
 export default  {
   name: 'Register',
-  components: { IonContent, IonPage, IonButton },
+  components: { IonContent, IonPage },
   data() {
     return {
       form: {}

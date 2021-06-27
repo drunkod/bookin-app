@@ -23,6 +23,10 @@ const routes = [
     component: () => import('@/views/Subscription.vue')
   },
   {
+    path: '/checkout',
+    component: () => import('@/views/Checkout.vue')
+  },
+  {
     path: '/article/:id',
     component: () => import('@/views/Article.vue')
   },
@@ -41,10 +45,6 @@ const routes = [
       {
         path: 'news',
         component: () => import('@/views/News.vue')
-      },
-      {
-        path: 'search',
-        component: () => import('@/views/Search.vue')
       },
       {
         path: 'contact',

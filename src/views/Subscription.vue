@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="card-footer bg-gray-light border-0 px-6 pb-3">
-                <a class="btn btn-primary text-white w-100 mb-3" href="/tabs/">Continuer</a>
+                <a class="btn btn-primary text-white w-100 mb-3" href="/checkout">Continuer</a>
               </div>
             </div>
           </ion-slide>
@@ -80,7 +80,7 @@
                 </div>
               </div>
               <div class="card-footer bg-gray-light text-white border-0 px-6 pb-3">
-                <a class="btn btn-primary text-white w-100 mb-3" href="/tabs/">Continuer</a>
+                <a class="btn btn-primary text-white w-100 mb-3" href="/checkout">Continuer</a>
               </div>
             </div>
           </ion-slide>

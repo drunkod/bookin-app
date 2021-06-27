@@ -11,11 +11,11 @@
           <ion-icon :icon="menu" />
           <ion-label>Actualité</ion-label>
         </ion-tab-button>
-        
-        <ion-tab-button tab="search" href="/tabs/search">
+
+        <!--<ion-tab-button tab="search" href="/tabs/search">
           <ion-icon :icon="search" />
           <ion-label>Recherche</ion-label>
-        </ion-tab-button>
+        </ion-tab-button>-->
 
         <ion-tab-button tab="contact" href="/tabs/contact">
           <ion-icon :icon="call" />

@@ -13,7 +13,7 @@
 
         <ion-card>
           <ion-card-header style="background-color: #00D6D8">
-            <ion-card-title style="font-size:20px; text-align:center">Basic 7,99€</ion-card-title>
+            <ion-card-title style="font-size:20px; text-align:center">Pro 17,99€</ion-card-title>
           </ion-card-header>
         </ion-card>
 
@@ -24,8 +24,8 @@
         </ion-content>
 
         <div class="ml-3 mt-3">
-          <h6><a>Gérer mon abonnement</a></h6>
-          <h6>Modifier mes informations</h6>
+          <h6><a href="#">Gérer mon abonnement</a></h6>
+          <h6><a href="#" style="text-color:black">Modifier mes informations</a></h6>
           <a class="text-danger" href="/login" @click.prevent="logout">Déconnexion</a>
         </div>
       </div>
