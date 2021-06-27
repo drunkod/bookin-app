@@ -3,7 +3,7 @@ import router from "../router";
 
 export const login = ({ commit, state }, form) => {
     axios.post(
-        'http://127.0.0.1:8000/api/login',
+        'http://bookin-web.herokuapp.com/api/login',
         {
             email: form.email,
             password: form.password,
@@ -82,7 +82,7 @@ export const showNews = ({ commit, state }) => {
 export const showOneNews = ({ commit, state }, newsId) => {
     console.log(newsId);
     axios.get(
-        `http://bookin-web.herokuapp.com/api/article/${newsId}`).then((response) => {
+        `http://bookin-web.herokuapp.com/api/article/1`).then((response) => {
         const article = response
         console.log(article)
         commit('article', article)
@@ -94,12 +94,18 @@ export const showOneNews = ({ commit, state }, newsId) => {
 
 export const sendMessage = ({ state }, form) => {
     axios.post(
-        'http://127.0.0.1:8000/api/contact',{
+        'http://bookin-web.herokuapp.com/api/sendMessage',
+        {
             firstname: form.firstname,
             lastname: form.lastname,
             email: form.email,
             message: form.message,
-        },).then(() => {}).catch(() => {
+        }
+        ).then((response) => {
+        console.log(response);
+        state.msg.success = 'Message envoyé !'
+    }).catch((error) => {
+        console.log(error);
         state.msg.error = "Echec d'envoi !"
     });
 }

@@ -7,7 +7,7 @@
             <ion-title size="large">Profile</ion-title>
           </ion-toolbar>
           <ion-toolbar>
-            <ion-title size="large"><h2 class="mt-3">Thomas Eyaa</h2></ion-title>
+            <ion-title size="large"><h2 class="mt-3">thomas@gmail.com</h2></ion-title>
           </ion-toolbar>
         </div>
 
@@ -17,8 +17,14 @@
           </ion-card-header>
         </ion-card>
 
+        <ion-content>
+          <ion-list>
+            <button>Gérer mon abonnement</button>
+          </ion-list>
+        </ion-content>
+
         <div class="ml-3 mt-3">
-          <h6>Gérer mon abonnement</h6>
+          <h6><a>Gérer mon abonnement</a></h6>
           <h6>Modifier mes informations</h6>
           <a class="text-danger" href="/login" @click.prevent="logout">Déconnexion</a>
         </div>
@@ -38,14 +44,13 @@ export default  {
     return {};
   },
   computed: {
-    ...mapGetters([
-      'user'
-    ])
+    ...mapGetters(['user'])
   },
   methods: {
-    ...mapActions([
-      'logout'
-    ])
+    ...mapActions(['login']),
+  },
+  mounted(){
+    this.login
   }
 }
 </script>

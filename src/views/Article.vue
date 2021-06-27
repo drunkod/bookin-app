@@ -3,9 +3,9 @@
     <ion-content :fullscreen="true">
       <div class="container mt-6">
         <div>
-          <router-link :to="{ path: '/tabs/news' }">
+          <a href="/tabs/news">
             <i class="fas fa-arrow-left"></i>
-          </router-link>
+          </a>
           <ion-toolbar>
             <ion-title size="large">Article</ion-title>
           </ion-toolbar>
