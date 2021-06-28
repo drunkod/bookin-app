@@ -26,7 +26,7 @@
         <div class="ml-3 mt-3">
           <h6><a href="#">Gérer mon abonnement</a></h6>
           <h6><a href="#" style="text-color:black">Modifier mes informations</a></h6>
-          <a class="text-danger" href="/login" @click.prevent="logout">Déconnexion</a>
+          <a class="text-danger" href="/login">Déconnexion</a>
         </div>
       </div>
     </ion-content>

@@ -39,7 +39,7 @@ export const register = ({ commit, state }, form) => {
         }
         commit('data', user)
         state.msg.success = 'Inscription réussie'
-        window.location.href="/login"
+        window.location.href="/subscription"
     }).catch((error) => {
         state.msg.error = error
         state.msg.error = "Echec d'inscription !"
