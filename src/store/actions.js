@@ -59,6 +59,7 @@ export const logout = ({ commit, state }) => {
     }).then((response) => {
         console.log(response);
         state.msg.success = 'Déconnexion réussie'
+        router.push('/login');
     }).catch((error) => {
         console.log(error);
     });
